@@ -10,6 +10,9 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 import mlflow.sklearn
 

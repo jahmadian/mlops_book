@@ -144,3 +144,6 @@ mlruns
 
 .DS_Store
 
+.idea
+*/.idea
+

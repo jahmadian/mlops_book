@@ -18,10 +18,11 @@ import mlflow.sklearn
 
 
 def acquire_training_data():
-    yfin.pdr_override()
+    # yfin.pdr_override()
     start = datetime.datetime(2019, 7, 1)
     end = datetime.datetime(2019, 9, 30)
-    df = pdr.DataReader("BTC-USD", 'yahoo', start, end)
+    df = yfin.Ticker("BTC-USD").history(start=start, end=end)
+    # df = pdr.DataReader("BTC-USD", 'yahoo', start, end)
     return df
 
 def digitize(n):

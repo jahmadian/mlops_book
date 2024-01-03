@@ -17,7 +17,7 @@ sgr0 := $(shell tput sgr0)
 padded_str := %-$(HELP_PADDING)s
 pretty_command := $(bold)$(padded_str)$(sgr0)
 
-include .env  # environment variables used in docker-compose stack
+include .env  # environment variables used in docker compose stack
 
 export
 
@@ -126,7 +126,7 @@ build:
 	JUPYTER_TARGET=${JUPYTER_TARGET} JUPYTER_USERNAME=${JUPYTER_USERNAME} \
 	MLFLOW_VERSION=${MLFLOW_VERSION} \
 	POSTGRES_UID=${POSTGRES_UID} POSTGRES_GID=${POSTGRES_GID} \
-	docker-compose build ${BUILD_OPTS}
+	docker compose build ${BUILD_OPTS}
 
 ${MLFLOW_ARTIFACT_STORE}:
 	mkdir -p ${MLFLOW_ARTIFACT_STORE}
@@ -141,7 +141,7 @@ up: ${MLFLOW_ARTIFACT_STORE} ${POSTGRES_STORE}
 	JUPYTER_UID=${JUPYTER_UID} JUPYTER_USERNAME=${JUPYTER_USERNAME} \
 	JUPYTER_ENABLE_LAB=${JUPYTER_ENABLE_LAB} \
 	POSTGRES_UID=${POSTGRES_UID} POSTGRES_GID=${POSTGRES_GID} \
-	docker-compose up ${UP_OPTS}
+	docker compose up ${UP_OPTS}
 
 run: ${MLFLOW_ARTIFACT_STORE} ${POSTGRES_STORE}
 	JUPYTER_BASE_IMAGE=${JUPYTER_BASE_IMAGE} JUPYTER_BASE_VERSION=${JUPYTER_BASE_VERSION} \
@@ -150,7 +150,7 @@ run: ${MLFLOW_ARTIFACT_STORE} ${POSTGRES_STORE}
 	JUPYTER_UID=${JUPYTER_UID} JUPYTER_USERNAME=${JUPYTER_USERNAME} \
 	JUPYTER_ENABLE_LAB=${JUPYTER_ENABLE_LAB} \
 	POSTGRES_UID=${POSTGRES_UID} POSTGRES_GID=${POSTGRES_GID} \
-	docker-compose run ${RUN_OPTS}
+	docker compose run ${RUN_OPTS}
 
 down:
 	docker compose down ${DOWN_OPTS}

@@ -153,7 +153,7 @@ run: ${MLFLOW_ARTIFACT_STORE} ${POSTGRES_STORE}
 	docker-compose run ${RUN_OPTS}
 
 down:
-	docker-compose down ${DOWN_OPTS}
+	docker compose down ${DOWN_OPTS}
 down-all: DOWN_OPTS:=${DOWN_ALL_OPTS}
 down-all: down
 

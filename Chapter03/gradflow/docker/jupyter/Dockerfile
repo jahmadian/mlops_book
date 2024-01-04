@@ -11,9 +11,9 @@ ENV WORK_DIR=$HOME_DIR/work
 
 RUN conda config --set allow_conda_downgrades true
 RUN conda install \
-        'mlflow='$MLFLOW_VERSION
+        'mlflow'
 RUN conda install \
-        'psycopg2=2.8.*'
+        'psycopg2'
 RUN conda install \
         'conda-build'
 RUN conda install \

@@ -52,7 +52,7 @@ USER root
 RUN chown -R $NB_UID:$NB_GID ./src/
 USER $NB_UID
 
-RUN pip install -e .
+# RUN pip install -e .
 
 ################## test image ###################
 FROM jupyter AS test

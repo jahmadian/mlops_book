@@ -60,7 +60,7 @@ setup(
     packages=find_packages(EXP_DIR),
     package_dir={"": EXP_DIR},
     include_package_data=True,
-    python_requires="==3.7.*",
+    python_requires="==3.11.*",
     install_requires=[
     ],
     extras_require={

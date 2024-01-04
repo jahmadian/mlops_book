@@ -16,7 +16,7 @@ jobs:
         - ls -la ./data/ # mlflow artifact & tracking data
     - name: "tox"
       env: TOX_PYTHON_ENV=py37
-      python: 3.7
+      python: 3.11
       before_install:
         - pwd
         - ls -la

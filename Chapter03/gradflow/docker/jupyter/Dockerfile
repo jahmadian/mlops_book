@@ -9,22 +9,21 @@ ARG JUPYTER_USERNAME
 ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
-RUN conda config --set allow_conda_downgrades true
-RUN conda install \
+RUN pip install \
         'mlflow'
-RUN conda install \
+RUN pip install \
         'psycopg2'
-RUN conda install \
-        'conda-build'
-RUN conda install \
+RUN pip install \
+        'build'
+RUN pip install \
         'tqdm'
-RUN conda install \
-        conda-forge/label/cf202003::jupyter_contrib_nbextensions
-RUN conda install \
+RUN pip install \
+        jupyter_contrib_nbextensions
+RUN pip install \
         'jupyter_nbextensions_configurator'
 
-RUN conda build purge-all && \
-    fix-permissions $CONDA_DIR
+# RUN conda build purge-all && \
+#     fix-permissions $CONDA_DIR
 
 USER root
 RUN ldconfig && \

@@ -30,8 +30,7 @@ RUN jupyter contrib nbextension install --sys-prefix
 USER root
 RUN sudo apt-get update
 RUN sudo apt install -y libpq-dev postgresql-server-dev-all
-RUN pip install \
-        psycopg2-binary
+RUN pip install psycopg2
 RUN ldconfig
 RUN mkdir -p $MLFLOW_ARTIFACT_STORE
 RUN jupyter nbextension enable toc2/main --sys-prefix

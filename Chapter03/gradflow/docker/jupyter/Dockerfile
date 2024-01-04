@@ -28,6 +28,7 @@ RUN jupyter contrib nbextension install --sys-prefix
 #     fix-permissions $CONDA_DIR
 
 USER root
+RUN sudo apt-get update
 RUN sudo apt install -y libpq-dev postgresql-server-dev-all
 RUN pip install \
         psycopg2-binary

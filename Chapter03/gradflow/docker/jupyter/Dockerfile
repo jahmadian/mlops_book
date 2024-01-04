@@ -32,10 +32,8 @@ USER root
 RUN ldconfig
 RUN mkdir -p $MLFLOW_ARTIFACT_STORE
 RUN jupyter nbextension enable toc2/main --sys-prefix
-RUN jupyter nbextension enable toc2/main
 RUN jupyter nbextension enable collapsible_headings/main --sys-prefix
 RUN fix-permissions $WORK_DIR
-RUN fix-permissions $HOME_DIR
 
 USER $NB_UID
 RUn fix-permissions $HOME_DIR
@@ -45,7 +43,7 @@ WORKDIR $WORK_DIR
 COPY ./requirements.txt ./
 
 RUN pip install --upgrade pip && \
-    pip install -r ./requirements.txt
+    pip install -r ./requirements.txt --user
 
 # install experiment code in editable mode
 COPY ./setup.py ./

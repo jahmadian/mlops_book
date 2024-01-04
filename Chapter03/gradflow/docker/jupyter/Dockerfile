@@ -52,6 +52,8 @@ USER root
 RUN chown -R $NB_UID:$NB_GID ./src/
 USER $NB_UID
 
+RUN python -V
+
 RUN pip install -e .
 
 ################## test image ###################

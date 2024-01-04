@@ -26,10 +26,10 @@ RUN pip install \
 #     fix-permissions $CONDA_DIR
 
 USER root
-RUN ldconfig && \
-    jupyter nbextension enable toc2/main --sys-prefix && \
-    jupyter nbextension enable collapsible_headings/main --sys-prefix && \
-    mkdir -p $MLFLOW_ARTIFACT_STORE
+RUN ldconfig
+RUN jupyter nbextension enable toc2/main --sys-prefix
+RUN jupyter nbextension enable collapsible_headings/main --sys-prefix
+RUN mkdir -p $MLFLOW_ARTIFACT_STORE
 
 USER $NB_UID
 

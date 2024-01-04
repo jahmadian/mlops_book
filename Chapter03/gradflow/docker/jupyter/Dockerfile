@@ -10,20 +10,20 @@ ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
 RUN pip install \
-        'mlflow'
+        mlflow
 RUN pip install \
-        'psycopg2-binary'
+        psycopg2
 RUN pip install \
-        'build'
+        build
 RUN pip install \
-        'tqdm'
+        tqdm
 RUN pip install \
         jupyter_contrib_nbextensions
 RUN pip install \
-        'jupyter_nbextensions_configurator'
-Run pip install --upgrade notebook==6.4.12
-Run pip install --upgrade traitlets==5.9.0
-RUn jupyter contrib nbextension install --sys-prefix
+        jupyter_nbextensions_configurator
+RUN pip install --upgrade notebook==6.4.12
+RUN pip install --upgrade traitlets==5.9.0
+RUN jupyter contrib nbextension install --sys-prefix
 
 # RUN conda build purge-all && \
 #     fix-permissions $CONDA_DIR

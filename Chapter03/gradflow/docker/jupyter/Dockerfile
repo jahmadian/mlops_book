@@ -21,6 +21,8 @@ RUN pip install \
         jupyter_contrib_nbextensions
 RUN pip install \
         'jupyter_nbextensions_configurator'
+Run pip install --upgrade notebook==6.4.12
+Run pip install --upgrade traitlets==5.9.0
 RUn jupyter contrib nbextension install --sys-prefix
 
 # RUN conda build purge-all && \

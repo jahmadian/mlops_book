@@ -19,7 +19,7 @@ RUN conda install \
 RUN conda install \
         'tqdm'
 RUN conda install \
-        -c conda-forge 'jupyter_contrib_nbextensions'
+        conda-forge::jupyter_contrib_nbextensions
 RUN conda install \
         'jupyter_nbextensions_configurator'
 

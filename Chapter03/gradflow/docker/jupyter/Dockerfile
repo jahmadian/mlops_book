@@ -21,15 +21,17 @@ RUN pip install \
         jupyter_contrib_nbextensions
 RUN pip install \
         'jupyter_nbextensions_configurator'
+RUn jupyter contrib nbextension install --sys-prefix
 
 # RUN conda build purge-all && \
 #     fix-permissions $CONDA_DIR
 
 USER root
 RUN ldconfig
-RUN jupyter nbextension enable toc2/main --sys-prefix
-RUN jupyter nbextension enable collapsible_headings/main --sys-prefix
 RUN mkdir -p $MLFLOW_ARTIFACT_STORE
+RUN jupyter nbextension enable toc2/main --sys-prefix
+RUN jupyter nbextension enable toc2/main
+RUN jupyter nbextension enable collapsible_headings/main --sys-prefix
 
 USER $NB_UID
 

@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM 3.11-slim
 
 # install git; needed for pip if the repo has git dependencies
 RUN apt-get update && \

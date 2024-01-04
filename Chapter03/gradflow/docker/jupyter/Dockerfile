@@ -41,9 +41,9 @@ USER $NB_UID
 # Useful for development since changes in code will not trigger a layer re-build
 WORKDIR $WORK_DIR
 COPY ./requirements.txt ./
+RUn fix-permissions $HOME_DIR
 RUN pip install --upgrade pip && \
-    pip install -r ./requirements.txt && \
-    fix-permissions $HOME_DIR
+    pip install -r ./requirements.txt
 
 # install experiment code in editable mode
 COPY ./setup.py ./

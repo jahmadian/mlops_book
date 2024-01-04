@@ -12,7 +12,7 @@ ENV WORK_DIR=$HOME_DIR/work
 RUN pip install \
         'mlflow'
 RUN pip install \
-        'psycopg2'
+        'psycopg2-binary'
 RUN pip install \
         'build'
 RUN pip install \

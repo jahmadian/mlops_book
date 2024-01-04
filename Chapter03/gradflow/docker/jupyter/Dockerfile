@@ -9,6 +9,7 @@ ARG JUPYTER_USERNAME
 ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
+RUN conda config --set allow_conda_downgrades true
 RUN conda install \
         'mlflow='$MLFLOW_VERSION \
         'psycopg2=2.8.*' \

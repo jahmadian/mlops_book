@@ -11,6 +11,7 @@ ENV WORK_DIR=$HOME_DIR/work
 
 RUN pip install \
         mlflow
+RUN apt install libpq-dev python3-dev
 RUN pip install \
         psycopg2
 RUN pip install \

@@ -11,9 +11,7 @@ ENV WORK_DIR=$HOME_DIR/work
 
 RUN pip install \
         mlflow
-RUN apt install libpq-dev python3-dev
-RUN pip install \
-        psycopg2-binary
+
 RUN pip install \
         build
 RUN pip install \
@@ -30,6 +28,9 @@ RUN jupyter contrib nbextension install --sys-prefix
 #     fix-permissions $CONDA_DIR
 
 USER root
+RUN sudo apt install libpq-dev python3-dev
+RUN pip install \
+        psycopg2-binary
 RUN ldconfig
 RUN mkdir -p $MLFLOW_ARTIFACT_STORE
 RUN jupyter nbextension enable toc2/main --sys-prefix

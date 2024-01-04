@@ -11,13 +11,19 @@ ENV WORK_DIR=$HOME_DIR/work
 
 RUN conda config --set allow_conda_downgrades true
 RUN conda install \
-        'mlflow='$MLFLOW_VERSION \
-        'psycopg2=2.8.*' \
-        'conda-build' \
-        'tqdm' \
-        'jupyter_contrib_nbextensions' \
-        'jupyter_nbextensions_configurator' && \
-    conda build purge-all && \
+        'mlflow='$MLFLOW_VERSION
+RUN conda install \
+        'psycopg2=2.8.*'
+RUN conda install \
+        'conda-build'
+RUN conda install \
+        'tqdm'
+RUN conda install \
+        'jupyter_contrib_nbextensions'
+RUN conda install \
+        'jupyter_nbextensions_configurator'
+
+RUN conda build purge-all && \
     fix-permissions $CONDA_DIR
 
 USER root

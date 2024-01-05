@@ -25,7 +25,7 @@ RUN pip install --upgrade traitlets==5.9.0
 RUN jupyter contrib nbextension install --sys-prefix
 RUN sudo apt-get update
 RUN sudo apt install -y libpq-dev postgresql-server-dev-all
-RUN pip install psycopg2
+RUN pip install psycopg2-binary
 
 # RUN conda build purge-all && \
 #     fix-permissions $CONDA_DIR

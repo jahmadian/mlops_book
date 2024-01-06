@@ -10,7 +10,7 @@ ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
 RUN conda install \
-        'mlflow='$MLFLOW_VERSION
+        mlflow
 RUN conda install \
         conda-build
 RUN conda install \

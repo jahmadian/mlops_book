@@ -9,24 +9,23 @@ ARG JUPYTER_USERNAME
 ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
-RUN pip install \
-        mlflow
-
-RUN pip install \
-        build
-RUN pip install \
+RUN conda install \
+        'mlflow='$MLFLOW_VERSION
+RUN conda install \
+        conda-build
+RUN conda install \
         tqdm
-RUN pip install \
+RUN conda install \
         jupyter_contrib_nbextensions
-RUN pip install \
+RUN conda install \
         jupyter_nbextensions_configurator
-RUN pip install --upgrade notebook==6.4.12
-RUN pip install --upgrade traitlets==5.9.0
+#RUN conda install --upgrade notebook==6.4.12
+#RUN conda install --upgrade traitlets==5.9.0
 RUN jupyter contrib nbextension install --sys-prefix
 #RUN sudo apt-get update
 #RUN sudo apt install -y libpq-dev postgresql-server-dev-all
-RUN pip install psycopg2-binary
-RUN fix-permissions $PYTHONPATH
+RUN conda install psycopg2-binary
+RUN fix-permissions $CONDA_DIR
 # RUN conda build purge-all && \
 #     fix-permissions $CONDA_DIR
 

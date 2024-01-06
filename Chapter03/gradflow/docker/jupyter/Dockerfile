@@ -40,7 +40,6 @@ RUN jupyter nbextension enable toc2/main --sys-prefix
 RUN jupyter nbextension enable collapsible_headings/main --sys-prefix
 
 USER $NB_UID
-RUN kill 1
 # Install Python dependencies from requirements.txt in advance
 # Useful for development since changes in code will not trigger a layer re-build
 WORKDIR $WORK_DIR

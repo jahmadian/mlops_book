@@ -12,10 +12,10 @@ ENV WORK_DIR=$HOME_DIR/work
 RUN conda install -c conda-forge mlflow
 RUN conda install -c conda-forge conda-build
 RUN conda install -c conda-forge tqdm
+RUN conda install --upgrade notebook==6.4.12
+RUN conda install --upgrade traitlets==5.9.0
 RUN conda install jupyter_contrib_nbextensions
 RUN conda install jupyter_nbextensions_configurator
-#RUN conda install --upgrade notebook==6.4.12
-#RUN conda install --upgrade traitlets==5.9.0
 RUN jupyter contrib nbextension install --sys-prefix
 #RUN sudo apt-get update
 #RUN sudo apt install -y libpq-dev postgresql-server-dev-all

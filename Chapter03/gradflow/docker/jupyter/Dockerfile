@@ -11,7 +11,7 @@ ENV WORK_DIR=$HOME_DIR/work
 
 RUN conda install -c conda-forge mlflow
 RUN conda install -c conda-forge conda-build
-RUN conda install -c conda-forgetqdm
+RUN conda install -c conda-forge tqdm
 RUN conda install -c conda-forge jupyter_contrib_nbextensions
 RUN conda install -c conda-forgejupyter_nbextensions_configurator
 #RUN conda install --upgrade notebook==6.4.12

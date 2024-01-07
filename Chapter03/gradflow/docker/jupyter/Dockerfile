@@ -9,8 +9,7 @@ ARG JUPYTER_USERNAME
 ENV HOME_DIR=/home/$JUPYTER_USERNAME
 ENV WORK_DIR=$HOME_DIR/work
 
-RUN conda install \
-        mlflow
+RUN conda install -c conda-forge mlflow
 RUN conda install \
         conda-build
 RUN conda install \
